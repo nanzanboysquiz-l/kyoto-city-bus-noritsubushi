@@ -8,5 +8,6 @@ test-results/
 !.env.demo
 !.env.test
 .supabase/
+supabase/.temp/
 coverage/
 .vercel
