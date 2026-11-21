@@ -10,6 +10,7 @@ test("shows route progress on an interactive map and in a textual list", async (
   await page.goto("/");
 
   await expect(page.getByText("公式GTFSの試作表示", { exact: true })).toBeVisible();
+  await expect(page.getByText(/取得版:/)).toBeVisible();
   await expect(
     page.getByRole("region", { name: "路線の進捗地図" }),
   ).toBeVisible();

@@ -49,6 +49,25 @@ function activeRoutes(): DemoRoute[] {
     : demoRoutes;
 }
 
+function officialFeedNotice(): string {
+  const feeds = [
+    ...new Map(
+      officialRoutes.map((route) => {
+        const metadata = route as DemoRoute & {
+          sourceFeedVersion?: string;
+          sourceFeedStart?: string;
+          sourceFeedEnd?: string;
+        };
+        return [
+          metadata.sourceFeedVersion ?? "",
+          `${metadata.operator}: ${metadata.sourceFeedVersion ?? "版未確認"}（${metadata.sourceFeedStart ?? "開始日未確認"}〜${metadata.sourceFeedEnd ?? "終了日未確認"}）`,
+        ];
+      }),
+    ).values(),
+  ];
+  return feeds.join("／");
+}
+
 function AppNavigation({
   activeScreen,
   onNavigate,
@@ -90,7 +109,7 @@ function DemoBanner() {
         <strong>{usesOfficialData ? "公式GTFSの試作表示" : "画面見本のデモ"}</strong>
         <span className="demo-banner-detail">
           {usesOfficialData
-            ? "京都バス・京都市営バスのGTFSを表示します。個別利用条件の確認前で、本番運用は保留です。"
+            ? `京都バス・京都市営バスのGTFSを表示します。取得版: ${officialFeedNotice()}。個別利用条件の確認前で、本番運用は保留です。`
             : "路線・乗車状況は仮のデータです。記録は保存されません。"}
         </span>
       </span>
@@ -273,7 +292,7 @@ function MapScreen({
     const svg = createProgressSvg(routes, {
       title: "京都バス乗車進捗",
       attribution: import.meta.env.VITE_USE_OFFICIAL_GTFS === "true"
-        ? "京都バス・京都市営バスのODPT GTFS（取得版を表示）"
+        ? `京都バス・京都市営バスのODPT GTFS（${officialFeedNotice()}）`
         : "画面見本の仮データ",
     });
     const file = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
