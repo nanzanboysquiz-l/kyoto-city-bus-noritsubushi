@@ -100,8 +100,8 @@ function AppNavigation({
   );
 }
 
-function DemoBanner() {
-  const usesOfficialData = import.meta.env.VITE_USE_OFFICIAL_GTFS === "true";
+function DemoBanner({ official = false }: { official?: boolean }) {
+  const usesOfficialData = official || import.meta.env.VITE_USE_OFFICIAL_GTFS === "true";
   return (
     <div className="demo-banner" role="note">
       <span className="demo-dot" aria-hidden="true" />
@@ -282,8 +282,10 @@ function RouteList({
 
 function MapScreen({
   routes,
+  official = false,
 }: {
   routes: DemoRoute[];
+  official?: boolean;
 }) {
   const [selectedRouteId, setSelectedRouteId] = useState<string | null>(null);
   const [notice, setNotice] = useState("");
@@ -300,7 +302,9 @@ function MapScreen({
     const link = document.createElement("a");
 
     link.href = url;
-    link.download = "kyoto-bus-progress-demo.svg";
+    link.download = official
+      ? "kyoto-bus-progress-official.svg"
+      : "kyoto-bus-progress-demo.svg";
     link.click();
     URL.revokeObjectURL(url);
     setNotice("画面見本のSVGをダウンロードしました。");
@@ -320,7 +324,7 @@ function MapScreen({
         </button>
       </div>
 
-      <DemoBanner />
+      <DemoBanner official={official} />
       <ProgressOverview routes={routes} />
       {notice && (
         <p className="notice" role="status">
@@ -368,12 +372,14 @@ function RecordScreen({
   onAddRecord,
   onDeleteRecord,
   onReplaceRecords,
+  official = false,
 }: {
   records: RideRecord[];
   routes: DemoRoute[];
   onAddRecord: (record: RideRecord) => void;
   onDeleteRecord: (recordId: string) => void;
   onReplaceRecords: (records: RideRecord[]) => void;
+  official?: boolean;
 }) {
   const [selectedRouteId, setSelectedRouteId] = useState(routes[0]?.id ?? "");
   const [boardingStop, setBoardingStop] = useState(routes[0]?.segments[0]?.fromStop ?? "");
@@ -439,7 +445,7 @@ function RecordScreen({
           <p>乗った日と区間を残して、あとから地図で振り返ろう。</p>
         </div>
       </div>
-      <DemoBanner />
+      <DemoBanner official={official} />
       <div className="form-card">
         <div className="form-card-heading">
           <span className="form-icon" aria-hidden="true">01</span>
@@ -601,8 +607,10 @@ function RecordScreen({
 
 function GroupScreen({
   records,
+  official = false,
 }: {
   records: RideRecord[];
+  official?: boolean;
 }) {
   const selfDistance = summarizeMemberDistance(records);
 
@@ -615,7 +623,7 @@ function GroupScreen({
           <p>それぞれのペースで乗った道を、距離だけ並べてみよう。</p>
         </div>
       </div>
-      <DemoBanner />
+      <DemoBanner official={official} />
       <section className="privacy-note" aria-label="共有する情報">
         <span className="privacy-icon" aria-hidden="true">◎</span>
         <div>
@@ -736,18 +744,44 @@ function ConfiguredAuth({
   publishableKey: string;
 }) {
   const client = getSupabaseClient(supabaseUrl, publishableKey);
-  return <AuthScreen client={client} />;
+  return (
+    <AuthScreen
+      authenticatedContent={(session) => (
+        <RideApp
+          accountLabel={
+            typeof session.user.user_metadata.display_name === "string"
+              ? session.user.user_metadata.display_name
+              : session.user.email ?? "利用者"
+          }
+          official
+          onSignOut={() => {
+            void client.auth.signOut();
+          }}
+          routes={officialRoutes}
+        />
+      )}
+      client={client}
+    />
+  );
 }
 
-export default function App() {
+function RideApp({
+  routes: sourceRoutes,
+  accountLabel,
+  official = false,
+  onSignOut,
+}: {
+  routes: DemoRoute[];
+  accountLabel: string;
+  official?: boolean;
+  onSignOut?: () => void;
+}) {
   const [screen, setScreen] = useState<Screen>("map");
   const [records, setRecords] = useState<RideRecord[]>(() => loadRideRecords());
   const routes = useMemo(
-    () => applyRideProgress(activeRoutes(), records),
-    [records],
+    () => applyRideProgress(sourceRoutes, records),
+    [records, sourceRoutes],
   );
-
-  if (!isDemoMode()) return <ConfiguredApp />;
 
   const addRecord = (record: RideRecord) => {
     setRecords((current) => {
@@ -782,14 +816,22 @@ export default function App() {
           className="desktop-nav"
           onNavigate={setScreen}
         />
-        <div className="header-account">
-          <span className="account-avatar" aria-hidden="true">?</span>
-          <span>デモ利用中</span>
-        </div>
+        {onSignOut ? (
+          <button aria-label="ログアウト" className="header-account header-account-button" onClick={onSignOut} type="button">
+            <span className="account-avatar" aria-hidden="true">京</span>
+            <span>{accountLabel}</span>
+            <span className="header-signout">ログアウト</span>
+          </button>
+        ) : (
+          <div className="header-account">
+            <span className="account-avatar" aria-hidden="true">?</span>
+            <span>デモ利用中</span>
+          </div>
+        )}
       </header>
 
       <main className="page-content">
-        {screen === "map" && <MapScreen routes={routes} />}
+        {screen === "map" && <MapScreen official={official} routes={routes} />}
         {screen === "record" && (
           <RecordScreen
             onAddRecord={addRecord}
@@ -797,9 +839,10 @@ export default function App() {
             onReplaceRecords={replaceRecords}
             records={records}
             routes={routes}
+            official={official}
           />
         )}
-        {screen === "group" && <GroupScreen records={records} />}
+        {screen === "group" && <GroupScreen official={official} records={records} />}
       </main>
 
       <AppNavigation
@@ -808,5 +851,15 @@ export default function App() {
         onNavigate={setScreen}
       />
     </div>
+  );
+}
+
+export default function App() {
+  if (!isDemoMode()) return <ConfiguredApp />;
+  return (
+    <RideApp
+      accountLabel="デモ利用中"
+      routes={activeRoutes()}
+    />
   );
 }

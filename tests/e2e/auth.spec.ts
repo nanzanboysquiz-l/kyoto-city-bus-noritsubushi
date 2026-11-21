@@ -64,7 +64,7 @@ test("signs up with a display name and signs out", async ({ page }) => {
   await page.getByRole("button", { name: "登録してはじめる" }).click();
 
   await expect(
-    page.getByRole("heading", { name: "路線データの準備中" }),
+    page.getByRole("heading", { name: "走った道を、京都の地図に。" }),
   ).toBeVisible();
   expect(submittedName).toBe("みか");
 
@@ -118,7 +118,7 @@ test("explains when email confirmation prevents an immediate session", async ({
   ).toContainText("メール確認");
 });
 
-test("signs in and shows the authenticated data-readiness state", async ({
+test("signs in and opens the official route app", async ({
   page,
 }) => {
   await page.route("http://127.0.0.1:54321/**", async (route) => {
@@ -151,8 +151,9 @@ test("signs in and shows the authenticated data-readiness state", async ({
   await page.getByRole("button", { name: "ログイン" }).click();
 
   await expect(
-    page.getByRole("heading", { name: "路線データの準備中" }),
+    page.getByRole("heading", { name: "走った道を、京都の地図に。" }),
   ).toBeVisible();
+  await expect(page.getByText("公式GTFSの試作表示", { exact: true })).toBeVisible();
 });
 
 test("shows authentication errors instead of hiding them", async ({ page }) => {

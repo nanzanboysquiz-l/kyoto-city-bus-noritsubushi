@@ -1,11 +1,12 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import type { Session, SupabaseClient } from "@supabase/supabase-js";
 
 interface AuthScreenProps {
   client: SupabaseClient;
+  authenticatedContent?: (session: Session) => ReactNode;
 }
 
-export default function AuthScreen({ client }: AuthScreenProps) {
+export default function AuthScreen({ client, authenticatedContent }: AuthScreenProps) {
   const [session, setSession] = useState<Session | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
   const [signUpMode, setSignUpMode] = useState(false);
@@ -116,6 +117,10 @@ export default function AuthScreen({ client }: AuthScreenProps) {
       typeof session.user.user_metadata.display_name === "string"
         ? session.user.user_metadata.display_name
         : session.user.email ?? "利用者";
+
+    if (authenticatedContent) {
+      return authenticatedContent(session);
+    }
 
     return (
       <main className="setup-screen">

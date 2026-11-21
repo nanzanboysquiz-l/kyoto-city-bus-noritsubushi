@@ -160,6 +160,24 @@ a {
   font-weight: 600;
 }
 
+.header-account-button {
+  min-height: 44px;
+  padding: 4px 8px 4px 4px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header-account-button:hover {
+  background: #f2f6f4;
+}
+
+.header-signout {
+  color: var(--teal-dark);
+  font-size: 11px;
+}
+
 .account-avatar,
 .member-avatar {
   display: grid;
