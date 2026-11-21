@@ -1,0 +1,45 @@
+---
+financial: non-commercial
+organization: individual
+---
+
+# Interactive Middle-earth Map - LOTR, Hobbit & Silmarillion
+
+- URL: https://middle-earth-interactive-map.web.app/
+- 観測した日: 2026-11-11
+- 概要と収支を確かめた日: 2026-11-12
+- 探すときの語: 中つ国、指輪物語、ホビット、トールキン、ファンタジー、架空の地図
+
+## どんなサービスか
+
+| 項目 | 内容 |
+|---|---|
+| 一行で | 『指輪物語』『ホビット』『シルマリルの物語』の 128 の出来事と旅の道のりを、中つ国の地図と合成の衛星画像で示す地図 |
+| 提供する価値 | 物語の出来事がどこで起き、誰がどう旅したかを地図でたどれる |
+| 想定する利用者 | トールキンの作品のファン |
+| 商用か非商用か | 非商用 (ファンの作品。広告、寄付は見えなかった) |
+| 推定の売上 | なし (非商用) |
+| 運営 | 個人と見られる (Firebase Hosting の既定のドメイン) |
+| 推定の運用費 | 推測: 0 円。Firebase Hosting の無料枠と、自前のタイル約 1,400 枚 |
+
+## 技術 (2026-11-11 の観測)
+
+| 項目 | 観測したもの |
+|---|---|
+| 描画 | Leaflet |
+| フレームワーク | 見つからなかった |
+| 背景の地図とタイル | 自前のタイル (サイトと同じドメイン) |
+| 投稿やデータの保存先 | 見えなかった |
+| 配信 | 不明 (応答ヘッダーに手がかりが無い) |
+
+読み込んだタイルとスタイルの URL (一部):
+
+- `https://middle-earth-interactive-map.web.app/tiles/{z}/{x}/{y}.jpg`
+
+メモ:
+
+- タイルは Firebase Hosting (`web.app`) に置いている
+
+データの出どころ (地図の帰属表示と画面の最下部 500 字、2026-11-12):
+
+- 画面の最下部ほか: 「The base map image is sourced from the internet and is used here for fan/educational purposes」(元の地図の画像の出典は書かれていない)

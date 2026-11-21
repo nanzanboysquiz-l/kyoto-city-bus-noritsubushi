@@ -1,0 +1,42 @@
+---
+financial: non-commercial
+organization: individual
+---
+
+# Navara, an open-source 3D map engine
+
+- URL: https://navara.world/
+- ソース: https://github.com/maplibre/navara (MIT OR Apache-2.0。CI で Rust と Web の試験 ([navara の reference](../../../geo-software-library/references/libraries/navara.md))。2026-11-13 に確かめた)
+- 観測した日: 2026-11-11
+- 概要と収支を確かめた日: 2026-11-12
+- 探すときの語: 3D 地図エンジン、地球儀、ライブラリ、OSS、3D 都市モデル、MapLibre
+
+## どんなサービスか
+
+| 項目 | 内容 |
+|---|---|
+| 一行で | 衛星画像、地形、3D 都市モデル、ベクトルのデータを載せて自分の可視化を重ねられる、オープンソースの 3D 地図エンジン |
+| 提供する価値 | 複雑さを抑えて美しい地球儀を作り、宣言的なスタイルとプラグインで広げられる |
+| 想定する利用者 | 3D の地図アプリを作る開発者 |
+| 商用か非商用か | 非商用 (MIT と Apache-2.0 の OSS。MapLibre の組織の GitHub にある) |
+| 推定の売上 | なし (非商用) |
+| 運営 | 団体 (MapLibre の組織の GitHub にあるプロジェクト) |
+| 推定の運用費 | 推測: 月 0〜数千円。紹介とドキュメントのサイトは Cloudflare の静的配信。例で使うタイルは外部 (地理院、Mapterhorn、CARTO) |
+
+## 技術 (2026-11-11 の観測)
+
+| 項目 | 観測したもの |
+|---|---|
+| 描画 | 地図ライブラリの名前は見つからなかった |
+| フレームワーク | 見つからなかった |
+| 背景の地図とタイル | 見つからなかった |
+| 投稿やデータの保存先 | 見えなかった |
+| 配信 | Cloudflare |
+
+メモ:
+
+- オープンソースの 3D 地図エンジンの紹介のページ
+
+データの出どころ (地図の帰属表示と画面の最下部 500 字、2026-11-12):
+
+- 地図の帰属表示: 「Navara · MIT」 ／ 「Apache-2.0」

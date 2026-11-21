@@ -1,0 +1,44 @@
+---
+financial: non-commercial
+organization: individual
+---
+
+# 国道マップ
+
+- URL: https://nanase.cc/kokudo-map/#4.62/35.79/137.92
+- ソース: https://github.com/nanase/kokudo-map (MIT。CI で lint、単体テスト (bun test)、仕様の検査、文書の検査、データを作る Python の構文と ruff。2026-11-13 に確かめた)
+- 観測した日: 2026-11-11
+- 概要と収支を確かめた日: 2026-11-12
+- 探すときの語: 国道、都道府県道、道路、重用区間、重複区間、酷道、点線国道
+
+## どんなサービスか
+
+| 項目 | 内容 |
+|---|---|
+| 一行で | 日本全国の国道と都道府県道を、重用区間 (重複区間) や点線国道、海上国道まで分けて描いた地図 |
+| 提供する価値 | ふつうの地図では分からない道路の指定の重なりを、全国で見られる |
+| 想定する利用者 | 道路と国道の愛好家、道路の指定を調べる人 |
+| 商用か非商用か | 非商用 (広告、寄付は見えなかった。コードを GitHub で公開) |
+| 推定の売上 | なし (非商用) |
+| 運営 | 個人 (制作者 Nanase) |
+| 推定の運用費 | 推測: 月 0〜数百円。GitHub Pages を Cloudflare の後ろから配り、OSM から作った自前のタイルと地理院タイル |
+
+## 技術 (2026-11-11 の観測)
+
+| 項目 | 観測したもの |
+|---|---|
+| 描画 | MapLibre GL JS |
+| フレームワーク | 見つからなかった |
+| 背景の地図とタイル | 地理院タイル、自前のタイル (サイトと同じドメイン) |
+| 投稿やデータの保存先 | 見えなかった |
+| 配信 | Cloudflare 経由の GitHub Pages |
+
+読み込んだタイルとスタイルの URL (一部):
+
+- `https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png`
+- `https://data.nanase.cc/national-routes.pmtiles`
+- `https://data.nanase.cc/prefectural-routes.pmtiles`
+
+データの出どころ (地図の帰属表示と画面の最下部 500 字、2026-11-12):
+
+- 地図の帰属表示: 「国土地理院 | 道路データ © OpenStreetMap contributors (ODbL 1.0)」

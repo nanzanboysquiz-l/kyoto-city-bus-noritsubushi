@@ -1,0 +1,42 @@
+---
+financial: non-commercial
+organization: individual
+---
+
+# MeshMap - Meshtastic Node Map
+
+- URL: https://meshmap.net/
+- ソース: https://github.com/brianshea2/meshmap.net (AGPL-3.0 (中身は読んでいない)。2026-11-13 に確かめた)
+- 観測した日: 2026-11-11
+- 概要と収支を確かめた日: 2026-11-12
+- 探すときの語: Meshtastic、メッシュネットワーク、LoRa、無線、ノード、MQTT
+
+## どんなサービスか
+
+| 項目 | 内容 |
+|---|---|
+| 一行で | 公式の Meshtastic の MQTT サーバーに見えた約 9,900 のノードを、ほぼリアルタイムに示す地図 |
+| 提供する価値 | 世界のどこに Meshtastic のノードがあるかを見て、近くの仲間を探せる |
+| 想定する利用者 | Meshtastic の利用者、無線とメッシュのネットワークの愛好家 |
+| 商用か非商用か | 非商用 (広告、寄付は見えなかった。コードを GitHub で公開) |
+| 推定の売上 | なし (非商用) |
+| 運営 | 個人 (GitHub の個人アカウント brianshea2) |
+| 推定の運用費 | 推測: 月数千円。MQTT を受け続けるサーバー 1 台と Cloudflare の配信、OSM 財団の公開タイル |
+
+## 技術 (2026-11-11 の観測)
+
+| 項目 | 観測したもの |
+|---|---|
+| 描画 | Leaflet |
+| フレームワーク | 見つからなかった |
+| 背景の地図とタイル | OSM 財団の公開タイル |
+| 投稿やデータの保存先 | 見えなかった |
+| 配信 | Cloudflare |
+
+読み込んだタイルとスタイルの URL (一部):
+
+- `https://tile.openstreetmap.org/{z}/{x}/{y}.png`
+
+データの出どころ (地図の帰属表示と画面の最下部 500 字、2026-11-12):
+
+- 地図の帰属表示: 「9,898 nodes from Meshtastic MQTT | Map tiles from OpenStreetMap」

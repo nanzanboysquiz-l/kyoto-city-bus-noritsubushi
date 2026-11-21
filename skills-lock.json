@@ -1,0 +1,181 @@
+{
+  "version": 2,
+  "skills": {
+    "geo-software-arch": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-arch/SKILL.md",
+      "computedHash": "d66866f186282c06156ac7a1c14a6a9d1f44c0cfee6fe13e11d687e87ff1d4bf",
+      "installMode": "copy"
+    },
+    "geo-software-auth": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-auth/SKILL.md",
+      "computedHash": "eeed6a000ae9247fd40023666f5cf9786dfe87aa7168fdf710561c7a2f217483",
+      "installMode": "copy"
+    },
+    "geo-software-build": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-build/SKILL.md",
+      "computedHash": "005aa4e542e2df9dec599d8907e53c74d75a877ba13223f496ba003ccae27ef9",
+      "installMode": "copy"
+    },
+    "geo-software-data": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-data/SKILL.md",
+      "computedHash": "04160dc5b379a876fd590c850e82be415adafe6d753ef28ae66b66ac941fc953",
+      "installMode": "copy"
+    },
+    "geo-software-deploy": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-deploy/SKILL.md",
+      "computedHash": "9e541d873f91ad3eb5226093d8d4086549cdaab02ce7ab0faeb48a87c756b699",
+      "installMode": "copy"
+    },
+    "geo-software-eval": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-eval/SKILL.md",
+      "computedHash": "ae3c295caa7f5305adbee7f1d1d27be2eaa2e484b96564fa7c4aa3bfa65ad1b8",
+      "installMode": "copy"
+    },
+    "geo-software-growth": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-growth/SKILL.md",
+      "computedHash": "9c4eb3cde9aaf79cc23ad5e4e514c17a6c353a36efb4ec9a08422fe53e028926",
+      "installMode": "copy"
+    },
+    "geo-software-infra": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-infra/SKILL.md",
+      "computedHash": "8c82fcac5bd9fc26434b6b0fa4e83a2cf647bbc97ee3d004fd53c02a4e93953b",
+      "installMode": "copy"
+    },
+    "geo-software-legal-check": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-legal-check/SKILL.md",
+      "computedHash": "65bf5f5b153787c82d3adc08ad8cbc28301d279f4cf28374c5cef3924803f4ad",
+      "installMode": "copy"
+    },
+    "geo-software-library": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-library/SKILL.md",
+      "computedHash": "3a53e378c4b50bdfe93c4a14dce711bf64b2faba6b12596beba4e7f1fd39e264",
+      "installMode": "copy"
+    },
+    "geo-software-migrate": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-migrate/SKILL.md",
+      "computedHash": "6765ecf7e851e4fb590fa76245272193beb4186e47cb1b05dce004303d976cda",
+      "installMode": "copy"
+    },
+    "geo-software-monetize": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-monetize/SKILL.md",
+      "computedHash": "c07d32e82397b2b0e38b8a188eb07b08eee819cafc1ab174186438be70b610a1",
+      "installMode": "copy"
+    },
+    "geo-software-ops": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-ops/SKILL.md",
+      "computedHash": "a0470f0a1c93a1bf394728a523fe5f7c22b86657bf64dc633ddbed741b9e8d82",
+      "installMode": "copy"
+    },
+    "geo-software-poc-measure": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-poc-measure/SKILL.md",
+      "computedHash": "877f3d28bce80d6239ec4ce4eb0a99a0e7a338d75299773e0a70ee862dbcfe99",
+      "installMode": "copy"
+    },
+    "geo-software-product-grilling": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-product-grilling/SKILL.md",
+      "computedHash": "deedc628aad08c5c5bf3eab6b6407225f344d48eae83fe872a02dfbf6f494bda",
+      "installMode": "copy"
+    },
+    "geo-software-protocol": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-protocol/SKILL.md",
+      "computedHash": "f0f5b8e8d7984fdd072f5f78e184d2f510d7926e2b64d631b57bf6efca9a492a",
+      "installMode": "copy"
+    },
+    "geo-software-research-competitor": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-research-competitor/SKILL.md",
+      "computedHash": "bb106bf35cba699e79e9aa970e4dd294e012f187d3224befb36a8a92ade95824",
+      "installMode": "copy"
+    },
+    "geo-software-security-audit": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-security-audit/SKILL.md",
+      "computedHash": "25b0cde297cd5912ed76406704c146115934440570c3c78967df45a3f51243cf",
+      "installMode": "copy"
+    },
+    "geo-software-swarm": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-swarm/SKILL.md",
+      "computedHash": "2afb94d8c5454b5388b7d9a5c290db0a2267be44f2a6b7c03a7c9e33f8de7326",
+      "installMode": "copy"
+    },
+    "geo-software-tdd": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-tdd/SKILL.md",
+      "computedHash": "172365f5e68f272a4c021b697c041de142c65ec58ea3c77e9ac696940e06f219",
+      "installMode": "copy"
+    },
+    "geo-software-ui-design": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-ui-design/SKILL.md",
+      "computedHash": "f368f679e34cf44300a69b274af8c4e672aa73422df71e30677716c5c1703714",
+      "installMode": "copy"
+    },
+    "geo-software-ux-design": {
+      "source": "yuiseki/geo-software-factory",
+      "commit": "dc7438d9feb17c2e6db9bdc9b1db25787d557444",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/geo-software-ux-design/SKILL.md",
+      "computedHash": "cd65a14202388f32d493e037d9277a228be79a384db481eb5e5a06942ff8bdba",
+      "installMode": "copy"
+    }
+  }
+}

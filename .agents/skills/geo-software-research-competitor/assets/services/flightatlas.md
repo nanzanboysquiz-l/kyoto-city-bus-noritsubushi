@@ -1,0 +1,41 @@
+---
+financial: non-commercial
+organization: individual
+---
+
+# Flight Atlas
+
+- URL: https://flights.theojaffee.net/
+- 観測した日: 2026-11-11
+- 概要と収支を確かめた日: 2026-11-12
+- 探すときの語: 航空路線、旅客便、空港、直行便、航空網、地球儀
+
+## どんなサービスか
+
+| 項目 | 内容 |
+|---|---|
+| 一行で | 世界の旅客便の路線を、年間の旅客数に応じた太さで地球儀に描き、空港ごとの直行便を示す地図 |
+| 提供する価値 | どの空港からどこへ直行で飛べるか、どの路線が混むかが一目で分かる |
+| 想定する利用者 | 飛行機での旅行を計画する人、航空ファン、航空網を調べる人 |
+| 商用か非商用か | 非商用 (広告、寄付、有料プランは見えなかった。作り方を GitHub で公開) |
+| 推定の売上 | なし (非商用) |
+| 運営 | 個人 (theojaffee.net のサブドメイン、GitHub の個人アカウント) |
+| 推定の運用費 | 推測: 月 0〜数百円 (ドメイン代)。GitHub Pages の静的配信と OpenFreeMap のタイル |
+
+## 技術 (2026-11-11 の観測)
+
+| 項目 | 観測したもの |
+|---|---|
+| 描画 | MapLibre GL JS 5.24.0 |
+| フレームワーク | 見つからなかった |
+| 背景の地図とタイル | OpenFreeMap |
+| 投稿やデータの保存先 | 見えなかった |
+| 配信 | GitHub Pages |
+
+読み込んだタイルとスタイルの URL (一部):
+
+- `https://tiles.openfreemap.org/planet/20261101_080013_pt/{z}/{x}/{y}.pbf`
+
+データの出どころ (地図の帰属表示と画面の最下部 500 字、2026-11-12):
+
+- 地図の帰属表示: 「Data: Wikipedia, US DOT, UK CAA, Eurostat, ANAC, BITRE, DGCA India (ODbL), OurAirports. Map: OpenFreeMap © OpenMapTiles © OpenStreetMap contributors. How this was made」
