@@ -1,5 +1,9 @@
 # 京バスノート
 
+公開先:
+- GitHub: https://github.com/nanzanboysquiz-l/kyoto-city-bus-noritsubushi
+- Vercel: https://kyoto-city-bus-noritsubushi.vercel.app
+
 京都のバス乗車記録と進捗地図を目指す試作です。デモ画面は架空路線だけを表示し、入力内容やグループ情報は保存しません。Supabase向けの認証画面、初期スキーマ、行単位のアクセス制御を作成しましたが、実プロジェクトにはまだ接続・適用していません。認証後も公式路線データが準備されるまでは記録や共有を使えません。
 
 ## はじめかた
