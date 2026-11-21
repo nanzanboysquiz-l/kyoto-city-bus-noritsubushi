@@ -210,6 +210,7 @@ Supabase Authを選ぶ。利用者は6〜20人で企業SSOやソーシャルロ�
 ### デプロイ (geo-software-deploy)
 
 - 2026-11-21、Vercelへ初回本番デプロイを完了した。デプロイIDは`dpl_6p2ChioeoUGvgXsGxbRySqdNBbAE`。公開URLは`https://kyoto-city-bus-noritsubushi.vercel.app`。GitHubリポジトリはPUBLICで、mainブランチとVercel Git Integrationを接続した。
+- 2026-11-21、mainへのpushで自動デプロイを完了した。最新デプロイIDは`dpl_E4a2AV2EdETCxGL9UUBUcb7dAwCF`、VercelのDeployment Protection（SSO）を解除し、公開URLをHTTP 200で確認した。
 
 ## 評価の結果
 
